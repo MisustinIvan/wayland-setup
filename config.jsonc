@@ -1,0 +1,35 @@
+{
+	"on-sigusr1": "toggle",
+	"reload_style_on_change": true,
+	"layer": "top",
+	"modules-left": ["niri/workspaces", "niri/window"],
+	"modules-center": ["mpris"],
+	"modules-right": ["pulseaudio", "battery", "clock", "niri/language"],
+	"sway/window": {
+		"max-length": 50
+	},
+	"mpris": {
+		"format": "{title} - {artist}",
+		"on-click": "playerctl play-pause",
+		"max-length": 40
+	},
+	"battery": {
+		"format": "[{capacity}% {power}W({time})]",
+		"critical-threshold": 15,
+		"states": {
+			"good": 80,
+			"warning": 30,
+			"critical": 15
+		}
+	},
+	"clock": {
+		"format": "[{:%a %d %b %H:%M:%S}]",
+		"interval": 1,
+	},
+	"pulseaudio": {
+		"format": "[{volume}%]",
+	},
+	"niri/language": {
+		"format": "[{short}]"
+	}
+}

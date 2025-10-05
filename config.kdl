@@ -1,0 +1,157 @@
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "4"
+workspace "5"
+workspace "6"
+workspace "7"
+workspace "8"
+
+input {
+    keyboard {
+        xkb {
+            layout "us,cz"
+            options "grp:alt_shift_toggle,caps:escape"
+        }
+    }
+    touchpad {
+        tap // tap to click
+        dwt // disable while typing
+        accel-speed 0.2
+        accel-profile "flat"
+        scroll-method "two-finger"
+        disabled-on-external-mouse
+    }
+    mouse {
+        accel-speed 0.2
+        accel-profile "flat"
+    }
+    focus-follows-mouse
+}
+
+gestures {
+}
+
+output "eDP-1" {
+    mode "2560x1440@165.003"
+    //mode "2560x1440@60"
+    scale 1.5
+    transform "normal"
+    position x=0 y=0
+	focus-at-startup
+	variable-refresh-rate
+	background-color "#181818"
+	backdrop-color "#181818"
+}
+
+layout {
+    gaps 8
+    center-focused-column "never"
+
+    default-column-width { proportion 0.5; }
+
+	focus-ring {
+		off
+	}
+    border {
+        width 2
+        active-color "#ffdd33"
+        inactive-color "#95a99f"
+        urgent-color "#f43841"
+    }
+}
+
+spawn-at-startup "waybar"
+spawn-at-startup "mako"
+hotkey-overlay {
+    skip-at-startup
+}
+prefer-no-csd
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+animations {
+    //off
+    slowdown 0.5
+}
+
+// Open the Firefox picture-in-picture player as floating by default.
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+/-window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+
+binds {
+    Mod+Shift+Slash { show-hotkey-overlay; }
+
+    Mod+Return hotkey-overlay-title="Open a terminal: alacritty" { spawn "alacritty"; }
+    Mod+Shift+B hotkey-overlay-title="Open a browser: librewolf" { spawn "librewolf"; }
+    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "pulsemixer --change-volume +5"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "pulsemixer --change-volume -5"; }
+    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set +10%"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn-sh "brightnessctl --class=backlight set 10%-"; }
+
+    Mod+O repeat=false { toggle-overview; }
+    Mod+Q repeat=false { close-window; }
+
+	// send SIGUSR1 to waybar which causes it to toggle with the correct configuration.
+	Mod+B hotkey-overlay-title="toggle waybar" { spawn-sh "kill -10 $(pgrep waybar)"; }
+
+    Mod+J             { focus-column-left; }
+    Mod+K             { focus-workspace-down; }
+    Mod+L             { focus-workspace-up; }
+    Mod+Semicolon     { focus-column-right; }
+    Mod+Shift+J             { move-column-left; }
+    Mod+Shift+K             { move-window-to-workspace-down; }
+    Mod+Shift+L             { move-window-to-workspace-up; }
+    Mod+Shift+Semicolon     { move-column-right; }
+
+    Mod+Comma  { focus-monitor-left; }
+    Mod+Period { focus-monitor-right; }
+    Mod+Shift+Comma  { move-window-to-monitor-left; }
+    Mod+Shift+Period { move-window-to-monitor-right; }
+
+    // You can refer to workspaces by index. However, keep in mind that
+    // niri is a dynamic workspace system, so these commands are kind of
+    // "best effort". Trying to refer to a workspace index bigger than
+    // the current workspace count will instead refer to the bottommost
+    // (empty) workspace.
+    //
+    // For example, with 2 workspaces + 1 empty, indices 3, 4, 5 and so on
+    // will all refer to the 3rd workspace.
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+Shift+1 { move-window-to-workspace 1; }
+    Mod+Shift+2 { move-window-to-workspace 2; }
+    Mod+Shift+3 { move-window-to-workspace 3; }
+    Mod+Shift+4 { move-window-to-workspace 4; }
+    Mod+Shift+5 { move-window-to-workspace 5; }
+    Mod+Shift+6 { move-window-to-workspace 6; }
+    Mod+Shift+7 { move-window-to-workspace 7; }
+    Mod+Shift+8 { move-window-to-workspace 8; }
+    Mod+Shift+9 { move-window-to-workspace 9; }
+
+    Mod+Tab { focus-workspace-previous; }
+
+    Mod+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+
+    Mod+Shift+P { screenshot; }
+
+    Mod+Ctrl+Shift+Q { quit; }
+    Mod+Ctrl+Shift+P { power-off-monitors; }
+}

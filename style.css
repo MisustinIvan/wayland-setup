@@ -1,0 +1,56 @@
+* {
+	font-family: Iosevka Nerd Font Mono;
+	font-size: 15px;
+	border: none;
+	box-shadow: none;
+	transition-duration: 50ms;
+}
+
+window#waybar {
+	background: #282828;
+	color: #ffdd33;
+}
+
+#workspaces button {
+	border-radius: 0px;
+	border-width: 0px;
+	padding: 6px;
+	margin: 0px;
+	color: #ffdd33;
+	background: #282828;
+}
+
+#workspaces button:hover {
+	border-radius: 0px;
+	border-width: 0px;
+	padding: 6px;
+	margin: 0px;
+	background: #ffdd33;
+	color: #282828;
+}
+
+#workspaces button.urgent {
+	background: #f43841;
+	color: #282828;
+}
+
+#workspaces button.active {
+	background: #95a99f;
+	color: #282828;
+}
+
+#workspaces button.focused {
+	background: #ffdd33;
+	color: #282828;
+}
+
+#window {
+	margin-left: 20px;
+}
+
+#battery,
+#pulseaudio,
+#clock,
+#language {
+	margin-right: 12px;
+}

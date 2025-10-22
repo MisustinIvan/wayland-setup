@@ -16,6 +16,10 @@ mkdir -p "$WAYBAR_CFG_PATH"
 cp ./config.jsonc "$WAYBAR_CFG_PATH"
 cp ./style.css "$WAYBAR_CFG_PATH"
 
+MAKO_CFG_PATH="$HOME/.config/mako"
+mkdir -p "$MAKO_CFG_PATH"
+cp ./config "$MAKO_CFG_PATH"
+
 set +x
 
 echo "Config files copied successfully"

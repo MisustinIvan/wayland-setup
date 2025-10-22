@@ -128,6 +128,7 @@ binds {
 
     Mod+Return hotkey-overlay-title="Open a terminal: alacritty" { spawn "alacritty"; }
     Mod+Shift+B hotkey-overlay-title="Open a browser: librewolf" { spawn "librewolf"; }
+    Mod+Shift+T hotkey-overlay-title="Open a chat program: telegram" { spawn "Telegram"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "pulsemixer --change-volume +5"; }

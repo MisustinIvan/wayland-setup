@@ -4,7 +4,7 @@
 	"layer": "top",
 	"modules-left": ["niri/workspaces", "niri/window"],
 	"modules-center": ["mpris"],
-	"modules-right": ["pulseaudio", "battery", "clock", "niri/language"],
+	"modules-right": ["pulseaudio", "battery", "clock", "niri/language", "tray"],
 	"sway/window": {
 		"max-length": 50
 	},
@@ -31,5 +31,10 @@
 	},
 	"niri/language": {
 		"format": "[{short}]"
+	},
+	"tray": {
+		"icon-size": 15,
+		"spacing": 8,
+		"show-passive-items": true,
 	}
 }

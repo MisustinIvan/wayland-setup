@@ -12,6 +12,7 @@ window#waybar {
 }
 
 #workspaces button {
+	text-decoration: underline;
 	border-radius: 0px;
 	border-width: 0px;
 	padding: 6px;
@@ -46,11 +47,13 @@ window#waybar {
 
 #window {
 	margin-left: 20px;
+	margin-right: 20px;
 }
 
 #battery,
 #pulseaudio,
 #clock,
-#language {
+#language,
+#tray {
 	margin-right: 12px;
 }

@@ -1,0 +1,9 @@
+sort=-time
+layer=overlay
+background-color=#282828
+border-color=#ffdd33
+border-size=2
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=1
+font=Iosevka Nerd Font Mono 15

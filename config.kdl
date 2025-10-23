@@ -20,6 +20,7 @@ window-rule {
 window-rule {
 	match app-id=r#"^(org.telegram.desktop|discord|signal)$"#
 	open-on-workspace "chat"
+	open-maximized true
 }
 window-rule {
 	match app-id="zathura"

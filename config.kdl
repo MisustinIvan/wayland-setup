@@ -132,7 +132,8 @@ binds {
     Mod+Shift+T hotkey-overlay-title="Open a chat program: telegram" { spawn "Telegram"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
-
+	Mod+Shift+E hotkey-overlay-title="Emoji picker: bemoji" { spawn "bemoji"; }
+	Mod+Shift+N hotkey-overlay-title="Network manager: networkmanager_dmenu" { spawn "networkmanager_dmenu"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "pactl set-sink-volume @DEFAULT_SINK@ +5%"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "pactl set-sink-volume @DEFAULT_SINK@ -5%"; }

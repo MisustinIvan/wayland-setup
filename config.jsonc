@@ -1,6 +1,7 @@
 {
 	"on-sigusr1": "toggle",
 	"reload_style_on_change": true,
+	"position": "bottom",
 	"layer": "top",
 	"modules-left": ["niri/workspaces", "niri/window"],
 	"modules-center": ["mpris"],

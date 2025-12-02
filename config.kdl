@@ -69,7 +69,6 @@ output "eDP-1" {
     position x=0 y=0
 	focus-at-startup
 	variable-refresh-rate
-	background-color "#181818"
 	backdrop-color "#181818"
 }
 
@@ -78,7 +77,6 @@ output "HDMI-A-1" {
     scale 1.0
     transform "normal"
     position x=0 y=0
-	background-color "#181818"
 	backdrop-color "#181818"
 }
 
@@ -97,6 +95,8 @@ layout {
         inactive-color "#95a99f"
         urgent-color "#f43841"
     }
+
+	background-color "#181818"
 }
 
 spawn-at-startup "waybar"

@@ -5,7 +5,7 @@
 	"layer": "top",
 	"modules-left": ["niri/workspaces", "niri/window"],
 	"modules-center": ["mpris"],
-	"modules-right": ["pulseaudio", "battery", "clock", "niri/language", "tray"],
+	"modules-right": ["custom/signature_counter", "pulseaudio", "battery", "clock", "niri/language", "tray"],
 	"sway/window": {
 		"max-length": 50
 	},
@@ -15,23 +15,21 @@
 		"max-length": 40
 	},
 	"battery": {
-		"format": "[{capacity}% {power}W({time})]",
+		"format": "{icon} {capacity}% {power}W",
 		"critical-threshold": 15,
-		"states": {
-			"good": 80,
-			"warning": 30,
-			"critical": 15
-		}
+		"format-icons": ["󰂎", "󰁼", "󰁾", "󰂀", "󰁹"],
 	},
 	"clock": {
-		"format": "[{:%a %d %b %H:%M:%S}]",
+		"format": " {:%a %d %b %H:%M:%S}",
 		"interval": 1,
 	},
 	"pulseaudio": {
-		"format": "[{volume}%]",
+		"format": "{icon} {volume}%",
+		"format-muted": "󰕿",
+		"format-icons": ["󰖀", "󰕾"],
 	},
 	"niri/language": {
-		"format": "[{short}]"
+		"format": "󰌌 {short}"
 	},
 	"tray": {
 		"icon-size": 15,

@@ -46,7 +46,7 @@ input {
     }
     touchpad {
         tap // tap to click
-        //dwt // disable while typing
+        dwt // disable while typing
         accel-speed 0.2
         accel-profile "flat"
         scroll-method "two-finger"

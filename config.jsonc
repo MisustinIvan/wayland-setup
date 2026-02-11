@@ -10,9 +10,14 @@
 		"max-length": 50
 	},
 	"mpris": {
-		"format": "{title} - {artist}",
+		"format": "{status_icon} {title} - {artist}",
 		"on-click": "playerctl play-pause",
-		"max-length": 40
+		"max-length": 40,
+		"status-icons": {
+			"playing": "󰐊",
+			"paused": "󰏤",
+			"stopped": "󰓛",
+		},
 	},
 	"battery": {
 		"format": "{icon} {capacity}% {power}W",

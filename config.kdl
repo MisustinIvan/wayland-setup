@@ -102,7 +102,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "nm-applet"
-/-spawn-at-startup "swaybg -i /home/ivanm/Pictures/Wallpapers/pixelart/wallhaven-ox5rd7.jpg -m fill"
+//spawn-at-startup "swaybg -i /home/ivanm/Pictures/Wallpapers/landscape/Hokkaido1472_2-2507551835.jpg -m fill"
 hotkey-overlay {
     skip-at-startup
 }
@@ -189,4 +189,15 @@ binds {
     Mod+Ctrl+Shift+P { power-off-monitors; }
 
 	Mod+Shift+P { spawn-sh "$(echo \"poweroff\nsystemctl suspend\nreboot\nsystemctl hibernate\" | fuzzel --dmenu)"; }
+
+	Mod+P {
+		spawn-sh r#"
+			SEL=$(find ~/SourceCode -maxdepth 1 -type d | fuzzel --dmenu)
+			if [ -n "$SEL" ]; then
+				alacritty --working-directory "$SEL" -e lazygit &
+				alacritty --working-directory "$SEL" -e nvim . &
+				alacritty --working-directory "$SEL" -e gemini --resume &
+			fi
+		"#
+	}
 }

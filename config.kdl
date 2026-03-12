@@ -187,4 +187,6 @@ binds {
 
     Mod+Ctrl+Shift+Q { quit; }
     Mod+Ctrl+Shift+P { power-off-monitors; }
+
+	Mod+Shift+P { spawn-sh "$(echo \"poweroff\nsystemctl suspend\nreboot\nsystemctl hibernate\" | fuzzel --dmenu)"; }
 }

@@ -195,8 +195,15 @@ binds {
 			SEL=$(find ~/SourceCode -maxdepth 1 -type d | fuzzel --dmenu)
 			if [ -n "$SEL" ]; then
 				alacritty --working-directory "$SEL" -e lazygit &
+				sleep 0.5
+				niri msg action maximize-column &
 				alacritty --working-directory "$SEL" -e nvim . &
+				sleep 0.5
+				niri msg action maximize-column &
 				alacritty --working-directory "$SEL" -e gemini --resume &
+				sleep 0.5
+				niri msg action maximize-column &
+				niri msg action focus-column-left &
 			fi
 		"#
 	}

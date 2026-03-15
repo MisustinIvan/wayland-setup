@@ -20,6 +20,10 @@ MAKO_CFG_PATH="$HOME/.config/mako"
 mkdir -p "$MAKO_CFG_PATH"
 cp ./config "$MAKO_CFG_PATH"
 
+WALLPAPER_PATH="$HOME/Pictures/Wallpapers"
+mkdir -p "$WALLPAPER_PATH"
+cp -r ./Wallpapers "$WALLPAPER_PATH"
+
 set +x
 
 echo "Config files copied successfully"

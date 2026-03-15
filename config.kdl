@@ -207,4 +207,12 @@ binds {
 			fi
 		"#
 	}
+
+	// radio stuff
+	Mod+R {
+		spawn-sh r#"
+			CMD=$(printf "sdrpp\nsdrangel\ngqrx\nqsstv\ndocker start intercept\ndocker stop intercept" | fuzzel --dmenu --prompt="Radio Tools: ")
+			[ -n "$CMD" ] && eval "$CMD"
+		"#
+	}
 }

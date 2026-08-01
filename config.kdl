@@ -27,14 +27,17 @@ window-rule {
 	open-on-workspace "notes"
 }
 window-rule {
-	match app-id="librewolf"
-	open-on-workspace "browser"
-}
-window-rule {
 	match app-id="mpv"
 	match title="sxiv"
-    match app-id="LibreWolf" title=r#"^(YouTube Music|YouTube)$"#
 	open-on-workspace "media"
+}
+window-rule {
+    match app-id="librewolf"
+    open-on-workspace "browser"
+}
+window-rule {
+    match app-id="librewolf" title=r".*YouTube Music.*"
+    open-on-workspace "media"
 }
 
 input {
@@ -57,9 +60,16 @@ input {
         accel-profile "flat"
     }
     focus-follows-mouse
+	tablet {
+        map-to-output "HDMI-A-1"
+    }
 }
 
 gestures {
+}
+
+overview {
+	zoom 0.5
 }
 
 output "eDP-1" {
@@ -102,7 +112,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "nm-applet"
-spawn-at-startup "swaybg -i /home/ivanm/Pictures/Wallpapers/pixelart/Kanagawa-Light_Yellow.png -m fill"
+spawn-sh-at-startup "swaybg -i /home/ivanm/Pictures/Wallpapers/pixelart/mix.png -m fill"
 hotkey-overlay {
     skip-at-startup
 }
@@ -130,6 +140,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a terminal: alacritty" { spawn "alacritty"; }
     Mod+Shift+B hotkey-overlay-title="Open a browser: librewolf" { spawn "librewolf"; }
     Mod+Shift+T hotkey-overlay-title="Open a chat program: telegram" { spawn "Telegram"; }
+    Mod+Shift+M hotkey-overlay-title="Open youtube music in browser: librewolf" { spawn-sh "librewolf --new-window music.youtube.com"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
 
 	Mod+Shift+E hotkey-overlay-title="Emoji picker: bemoji" { spawn "bemoji"; }

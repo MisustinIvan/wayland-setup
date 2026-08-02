@@ -142,6 +142,7 @@ binds {
     Mod+Shift+T hotkey-overlay-title="Open a chat program: telegram" { spawn "Telegram"; }
     Mod+Shift+M hotkey-overlay-title="Open youtube music in browser: librewolf" { spawn-sh "librewolf --new-window music.youtube.com"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+T hotkey-overlay-title="Open time tracker" { spawn-sh "time_tracker ui"; }
 
 	Mod+Shift+E hotkey-overlay-title="Emoji picker: bemoji" { spawn "bemoji"; }
 	Mod+Shift+N hotkey-overlay-title="Network manager: networkmanager_dmenu" { spawn "networkmanager_dmenu"; }

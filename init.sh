@@ -24,6 +24,9 @@ WALLPAPER_PATH="$HOME/Pictures/Wallpapers"
 mkdir -p "$WALLPAPER_PATH"
 cp -r ./Wallpapers "$WALLPAPER_PATH"
 
+KEYBOARD_DAEMON_PATH="$HOME/.local/bin/keyboard_daemon.py"
+cp -r ./keyboard_daemon.py "$KEYBOARD_DAEMON_PATH"
+
 set +x
 
 echo "Config files copied successfully"

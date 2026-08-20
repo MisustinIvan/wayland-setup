@@ -25,8 +25,9 @@ WALLPAPER_PATH="$HOME/Pictures/Wallpapers"
 mkdir -p "$WALLPAPER_PATH"
 cp -r ./Wallpapers "$WALLPAPER_PATH"
 
-KEYBOARD_DAEMON_PATH="$HOME/.local/bin/keyboard_daemon.py"
-cp -r ./keyboard_daemon.py "$KEYBOARD_DAEMON_PATH"
+LOCAL_BIN_PATH="$HOME/.local/bin"
+mkdir -p "$LOCAL_BIN_PATH"
+cp ./keyboard_daemon.py "$LOCAL_BIN_PATH"
 
 set +x
 

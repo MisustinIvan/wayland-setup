@@ -1,0 +1,6 @@
+# Source archives for the wallpapers — the extracted images are tracked instead.
+# GitHub hard-rejects any single file over 100 MB.
+*.tar
+*.rar
+*.zip
+*.7z

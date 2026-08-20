@@ -112,6 +112,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "nm-applet"
+spawn-at-startup "keyboard_daemon.py"
 spawn-sh-at-startup "swaybg -i /home/ivanm/Pictures/Wallpapers/pixelart/mix.png -m fill"
 hotkey-overlay {
     skip-at-startup
@@ -141,11 +142,16 @@ binds {
     Mod+Shift+B hotkey-overlay-title="Open a browser: librewolf" { spawn "librewolf"; }
     Mod+Shift+T hotkey-overlay-title="Open a chat program: telegram" { spawn "Telegram"; }
     Mod+Shift+M hotkey-overlay-title="Open youtube music in browser: librewolf" { spawn-sh "librewolf --new-window music.youtube.com"; }
+    Mod+Ctrl+M hotkey-overlay-title="Open google maps in browser: librewolf" { spawn-sh "librewolf --new-window maps.google.com"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="Open time tracker" { spawn-sh "time_tracker ui"; }
 
 	Mod+Shift+E hotkey-overlay-title="Emoji picker: bemoji" { spawn "bemoji"; }
 	Mod+Shift+N hotkey-overlay-title="Network manager: networkmanager_dmenu" { spawn "networkmanager_dmenu"; }
+
+	Mod+W hotkey-overlay-title="Switch focus between floating and tiling" {switch-focus-between-floating-and-tiling; }
+	Mod+Shift+W hotkey-overlay-title="Toggle window between floating and tiling" {toggle-window-floating; }
+	Mod+Ctrl+W hotkey-overlay-title="Set window width to 50%" {set-window-width "50%"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "pactl set-sink-volume @DEFAULT_SINK@ +5%"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "pactl set-sink-volume @DEFAULT_SINK@ -5%"; }
@@ -178,6 +184,8 @@ binds {
     Mod+Ctrl+Period { move-workspace-to-monitor-right; }
     Mod+Ctrl+J  { move-workspace-up; }
     Mod+Ctrl+Semicolon { move-workspace-down; }
+	Mod+Ctrl+Shift+J {consume-or-expel-window-left; }
+	Mod+Ctrl+Shift+Semicolon {consume-or-expel-window-right; }
 
     Mod+1 { focus-workspace "terminal"; }
     Mod+2 { focus-workspace "browser"; }

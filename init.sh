@@ -15,6 +15,7 @@ WAYBAR_CFG_PATH="$HOME/.config/waybar"
 mkdir -p "$WAYBAR_CFG_PATH"
 cp ./config.jsonc "$WAYBAR_CFG_PATH"
 cp ./style.css "$WAYBAR_CFG_PATH"
+cp ./elapsed.sh "$WAYBAR_CFG_PATH"
 
 MAKO_CFG_PATH="$HOME/.config/mako"
 mkdir -p "$MAKO_CFG_PATH"

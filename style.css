@@ -8,7 +8,6 @@
 	font-size: 15px;
 	border: none;
 	box-shadow: none;
-	transition-duration: 50ms;
 }
 
 window#waybar {
@@ -49,10 +48,15 @@ window#waybar {
 	margin-right: 20px;
 }
 
+#custom-elapsed {
+	color: @red;
+}
+
 #battery,
 #pulseaudio,
 #clock,
 #language,
-#tray {
+#tray,
+#custom-elapsed {
 	margin-right: 18px;
 }

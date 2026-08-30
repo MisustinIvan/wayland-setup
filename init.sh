@@ -28,6 +28,7 @@ cp -r ./Wallpapers "$WALLPAPER_PATH"
 LOCAL_BIN_PATH="$HOME/.local/bin"
 mkdir -p "$LOCAL_BIN_PATH"
 cp ./keyboard_daemon.py "$LOCAL_BIN_PATH"
+cp ./fuzzel_ssh.py "$LOCAL_BIN_PATH"
 
 set +x
 

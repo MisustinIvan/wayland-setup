@@ -146,6 +146,7 @@ binds {
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="Open time tracker" { spawn-sh "time_tracker ui"; }
     Mod+S hotkey-overlay-title="Open ssh menu" { spawn-sh "fuzzel_ssh.py"; }
+    Mod+E hotkey-overlay-title="Evaluate Python code" { spawn-sh "fuzzel_python_eval.py"; }
 
 	Mod+Shift+E hotkey-overlay-title="Emoji picker: bemoji" { spawn "bemoji"; }
 	Mod+Shift+N hotkey-overlay-title="Network manager: networkmanager_dmenu" { spawn "networkmanager_dmenu"; }

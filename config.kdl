@@ -114,6 +114,7 @@ spawn-at-startup "mako"
 spawn-at-startup "nm-applet"
 spawn-at-startup "keyboard_daemon.py"
 spawn-sh-at-startup "swaybg -i /home/ivanm/Pictures/Wallpapers/pixelart/mix.png -m fill"
+spawn-sh-at-startup "udiskie --smart-tray"
 hotkey-overlay {
     skip-at-startup
 }

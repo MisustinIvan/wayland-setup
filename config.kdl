@@ -13,6 +13,9 @@ workspace "chat" {
 workspace "media" {
 	open-on-output "HDMI-A-1"
 }
+workspace "work" {
+	open-on-output "HDMI-A-1"
+}
 window-rule {
 	match app-id=r#"^(Alacritty|Wezterm|XTerm)$"#
 	open-on-workspace "terminal"
@@ -195,11 +198,13 @@ binds {
     Mod+3 { focus-workspace "notes"; }
     Mod+4 { focus-workspace "chat"; }
     Mod+5 { focus-workspace "media"; }
+    Mod+6 { focus-workspace "work"; }
     Mod+Shift+1 { move-window-to-workspace "terminal" focus=false; }
     Mod+Shift+2 { move-window-to-workspace "browser" focus=false; }
     Mod+Shift+3 { move-window-to-workspace "notes" focus=false; }
     Mod+Shift+4 { move-window-to-workspace "chat" focus=false; }
     Mod+Shift+5 { move-window-to-workspace "media" focus=false; }
+    Mod+Shift+6 { move-window-to-workspace "work" focus=false; }
 
     Mod+Tab { focus-workspace-previous; }
 

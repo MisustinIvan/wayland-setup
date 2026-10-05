@@ -1,56 +1,68 @@
-{
-	"on-sigusr1": "toggle",
-	"reload_style_on_change": true,
-	"position": "bottom",
-	"layer": "top",
-	"modules-left": ["niri/workspaces", "niri/window"],
-	"modules-center": ["mpris"],
-	"modules-right": ["custom/lectures", "custom/elapsed", "pulseaudio", "battery", "clock", "niri/language", "tray"],
-	"sway/window": {
-		"max-length": 50
-	},
-	"mpris": {
-		"format": "{status_icon} {title} - {artist}",
-		"on-click": "playerctl play-pause",
-		"max-length": 40,
-		"status-icons": {
-			"playing": "󰏤",
-			"paused": "󰐊",
-			"stopped": "󰓛"
+[
+	{
+		"name": "main",
+		"on-sigusr1": "toggle",
+		"reload_style_on_change": true,
+		"position": "bottom",
+		"layer": "top",
+		"modules-left": ["niri/workspaces", "niri/window"],
+		"modules-right": ["battery", "clock", "niri/language", "tray"],
+		"sway/window": {
+			"max-length": 50
+		},
+		"battery": {
+			"format": "{icon} {capacity}% {power}W",
+			"critical-threshold": 15,
+			"format-icons": ["󰂎", "󰁼", "󰁾", "󰂀", "󰁹"]
+		},
+		"clock": {
+			"format": " {:%a %d %b %H:%M:%S}",
+			"interval": 1
+		},
+		"niri/language": {
+			"format": "󰌌 {short}"
+		},
+		"tray": {
+			"icon-size": 15,
+			"spacing": 8,
+			"show-passive-items": true
 		}
 	},
-	"battery": {
-		"format": "{icon} {capacity}% {power}W",
-		"critical-threshold": 15,
-		"format-icons": ["󰂎", "󰁼", "󰁾", "󰂀", "󰁹"]
-	},
-	"clock": {
-		"format": " {:%a %d %b %H:%M:%S}",
-		"interval": 1
-	},
-	"pulseaudio": {
-		"format": "{icon} {volume}%",
-		"format-muted": "󰕿",
-		"format-icons": ["󰖀", "󰕾"]
-	},
-	"niri/language": {
-		"format": "󰌌 {short}"
-	},
-	"tray": {
-		"icon-size": 15,
-		"spacing": 8,
-		"show-passive-items": true
-	},
-	"custom/elapsed": {
-		"format": "󱎫 {}",
-		"interval": 60,
-		"exec": "$HOME/.config/waybar/elapsed.sh '2026-07-03 23:50:00'",
-		"return-type": "json"
-	},
-	"custom/lectures": {
-		"format": "󰑴 {}",
-		"interval": 30,
-		"exec": "$HOME/.config/waybar/lectures.py",
-		"return-type": "json"
+	{
+		"name": "info",
+		"on-sigusr1": "toggle",
+		"reload_style_on_change": true,
+		"position": "top",
+		"layer": "top",
+		"modules-left": ["custom/lectures"],
+		"modules-center": ["mpris"],
+		"modules-right": ["custom/elapsed", "pulseaudio"],
+		"mpris": {
+			"format": "{status_icon} {title} - {artist}",
+			"on-click": "playerctl play-pause",
+			"max-length": 40,
+			"status-icons": {
+				"playing": "󰏤",
+				"paused": "󰐊",
+				"stopped": "󰓛"
+			}
+		},
+		"pulseaudio": {
+			"format": "{icon} {volume}%",
+			"format-muted": "󰕿",
+			"format-icons": ["󰖀", "󰕾"]
+		},
+		"custom/elapsed": {
+			"format": "󱎫 {}",
+			"interval": 60,
+			"exec": "$HOME/.config/waybar/elapsed.sh '2026-09-15 22:00:00'",
+			"return-type": "json"
+		},
+		"custom/lectures": {
+			"format": "󰑴 {} ",
+			"interval": 30,
+			"exec": "$HOME/.config/waybar/lectures.py",
+			"return-type": "json"
+		}
 	}
-}
+]

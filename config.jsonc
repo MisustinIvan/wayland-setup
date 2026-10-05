@@ -5,7 +5,7 @@
 	"layer": "top",
 	"modules-left": ["niri/workspaces", "niri/window"],
 	"modules-center": ["mpris"],
-	"modules-right": ["custom/elapsed", "pulseaudio", "battery", "clock", "niri/language", "tray"],
+	"modules-right": ["custom/lectures", "custom/elapsed", "pulseaudio", "battery", "clock", "niri/language", "tray"],
 	"sway/window": {
 		"max-length": 50
 	},
@@ -45,6 +45,12 @@
 		"format": "󱎫 {}",
 		"interval": 60,
 		"exec": "$HOME/.config/waybar/elapsed.sh '2026-07-03 23:50:00'",
+		"return-type": "json"
+	},
+	"custom/lectures": {
+		"format": "󰑴 {}",
+		"interval": 30,
+		"exec": "$HOME/.config/waybar/lectures.py",
 		"return-type": "json"
 	}
 }

@@ -52,11 +52,20 @@ window#waybar {
 	color: @red;
 }
 
+#custom-lectures {
+	color: @grey;
+}
+
+#custom-lectures.active {
+	color: @fg;
+}
+
 #battery,
 #pulseaudio,
 #clock,
 #language,
 #tray,
-#custom-elapsed {
+#custom-elapsed,
+#custom-lectures {
 	margin-right: 18px;
 }

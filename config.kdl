@@ -16,6 +16,9 @@ workspace "media" {
 workspace "work" {
 	open-on-output "HDMI-A-1"
 }
+workspace "art" {
+	open-on-output "HDMI-A-1"
+}
 window-rule {
 	match app-id=r#"^(Alacritty|Wezterm|XTerm)$"#
 	open-on-workspace "terminal"
@@ -44,28 +47,28 @@ window-rule {
 }
 
 input {
-    keyboard {
-        xkb {
-            layout "us,cz"
-            options "grp:alt_shift_toggle,caps:escape"
-        }
-    }
-    touchpad {
-        tap // tap to click
-        dwt // disable while typing
-        accel-speed 0.2
-        accel-profile "flat"
-        scroll-method "two-finger"
-        disabled-on-external-mouse
-    }
-    mouse {
-        accel-speed 1
-        accel-profile "flat"
-    }
-    focus-follows-mouse
+	keyboard {
+		xkb {
+			layout "us,cz"
+			options "grp:alt_shift_toggle,caps:escape"
+		}
+	}
+	touchpad {
+		tap // tap to click
+		dwt // disable while typing
+		accel-speed 0.2
+		accel-profile "flat"
+		scroll-method "two-finger"
+		disabled-on-external-mouse
+	}
+	mouse {
+		accel-speed 1
+		accel-profile "flat"
+	}
+	focus-follows-mouse
 	tablet {
-        map-to-output "HDMI-A-1"
-    }
+		map-to-output "HDMI-A-1"
+	}
 }
 
 gestures {
@@ -86,7 +89,7 @@ output "eDP-1" {
 }
 
 output "HDMI-A-1" {
-    mode "1920x1200@59.950"
+    mode "2560x1440@59.951"
     scale 1.0
     transform "normal"
     position x=0 y=0
@@ -116,7 +119,8 @@ spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "nm-applet"
 spawn-at-startup "keyboard_daemon.py"
-spawn-sh-at-startup "swaybg -i /home/ivanm/Pictures/Wallpapers/pixelart/mix.png -m fill"
+//spawn-sh-at-startup "swaybg -i /home/ivanm/Pictures/Wallpapers/pixelart/wall_test.png -m fill"
+spawn-sh-at-startup "swaybg -i /home/ivanm/Pictures/Wallpapers/memes/Lingebra_Boss_-_Eigen-Phantom.png -m fill"
 spawn-sh-at-startup "udiskie --smart-tray"
 hotkey-overlay {
     skip-at-startup
@@ -147,6 +151,7 @@ binds {
     Mod+Shift+T hotkey-overlay-title="Open a chat program: telegram" { spawn "Telegram"; }
     Mod+Shift+M hotkey-overlay-title="Open youtube music in browser: librewolf" { spawn-sh "librewolf --new-window music.youtube.com"; }
     Mod+Ctrl+M hotkey-overlay-title="Open google maps in browser: librewolf" { spawn-sh "librewolf --new-window maps.google.com"; }
+    Mod+Shift+C hotkey-overlay-title="Open clanker in browser: librewolf" { spawn-sh "librewolf --new-window gemini.google.com"; }
     Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Mod+T hotkey-overlay-title="Open time tracker" { spawn-sh "time_tracker ui"; }
     Mod+S hotkey-overlay-title="Open ssh menu" { spawn-sh "fuzzel_ssh.py"; }
@@ -199,12 +204,14 @@ binds {
     Mod+4 { focus-workspace "chat"; }
     Mod+5 { focus-workspace "media"; }
     Mod+6 { focus-workspace "work"; }
+    Mod+7 { focus-workspace "art"; }
     Mod+Shift+1 { move-window-to-workspace "terminal" focus=false; }
     Mod+Shift+2 { move-window-to-workspace "browser" focus=false; }
     Mod+Shift+3 { move-window-to-workspace "notes" focus=false; }
     Mod+Shift+4 { move-window-to-workspace "chat" focus=false; }
     Mod+Shift+5 { move-window-to-workspace "media" focus=false; }
     Mod+Shift+6 { move-window-to-workspace "work" focus=false; }
+    Mod+Shift+7 { move-window-to-workspace "art" focus=false; }
 
     Mod+Tab { focus-workspace-previous; }
 

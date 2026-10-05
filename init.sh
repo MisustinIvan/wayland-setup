@@ -24,7 +24,7 @@ cp ./config "$MAKO_CFG_PATH"
 
 WALLPAPER_PATH="$HOME/Pictures/Wallpapers"
 mkdir -p "$WALLPAPER_PATH"
-cp -r ./Wallpapers "$WALLPAPER_PATH"
+cp -r ./Wallpapers/. "$WALLPAPER_PATH"
 
 LOCAL_BIN_PATH="$HOME/.local/bin"
 mkdir -p "$LOCAL_BIN_PATH"

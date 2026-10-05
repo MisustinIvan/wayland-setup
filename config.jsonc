@@ -5,7 +5,8 @@
 		"reload_style_on_change": true,
 		"position": "bottom",
 		"layer": "top",
-		"modules-left": ["niri/workspaces", "niri/window"],
+		"modules-left": ["niri/workspaces"],
+		"modules-center": ["niri/window"],
 		"modules-right": ["battery", "clock", "niri/language", "tray"],
 		"sway/window": {
 			"max-length": 50
@@ -34,6 +35,7 @@
 		"reload_style_on_change": true,
 		"position": "top",
 		"layer": "top",
+		"height": 36,
 		"modules-left": ["custom/lectures"],
 		"modules-center": ["mpris"],
 		"modules-right": ["custom/elapsed", "pulseaudio"],

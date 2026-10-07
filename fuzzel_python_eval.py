@@ -2,6 +2,8 @@
 from subprocess import Popen, PIPE
 import sys
 
+from math import *
+
 
 def get_input(prompt: str = "") -> str:
     cmd = ["fuzzel", "--dmenu", "--prompt-only", prompt]

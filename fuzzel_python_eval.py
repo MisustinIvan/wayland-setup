@@ -24,6 +24,9 @@ def main():
     except Exception as e:
         res = f"Error: {e}"
 
+    if type(res) == int or type(res) == float:
+        res = f"{res:_}"
+
     get_input(prompt=f"{res} ")
 
 

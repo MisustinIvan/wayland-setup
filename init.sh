@@ -26,6 +26,10 @@ WALLPAPER_PATH="$HOME/Pictures/Wallpapers"
 mkdir -p "$WALLPAPER_PATH"
 cp -r ./Wallpapers/. "$WALLPAPER_PATH"
 
+KITTY_CFG_PATH="$HOME/.config/kitty"
+mkdir -p "$KITTY_CFG_PATH"
+cp ./kitty.conf "$KITTY_CFG_PATH"
+
 LOCAL_BIN_PATH="$HOME/.local/bin"
 mkdir -p "$LOCAL_BIN_PATH"
 cp ./keyboard_daemon.py "$LOCAL_BIN_PATH"

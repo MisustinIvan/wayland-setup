@@ -25,7 +25,7 @@ def get_selection(input_list, prompt="", max_lines=8) -> str:
 def main():
     config = {'work': 'mr-crabs', 'factorio': 'factorio'}
     selection = get_selection(list(config), prompt="Select a machine: ")
-    Popen(['alacritty', '-e', 'ssh', config[selection], '-t', 'tmux', 'a'])
+    Popen(['kitty', '-e', 'kitten', 'ssh', config[selection], '-t', 'tmux', 'a'])
 
 if __name__ == "__main__":
     main()

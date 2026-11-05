@@ -20,7 +20,7 @@ workspace "art" {
 	open-on-output "HDMI-A-1"
 }
 window-rule {
-	match app-id=r#"^(Alacritty|Wezterm|XTerm)$"#
+	match app-id=r#"^(kitty|Alacritty|Wezterm|XTerm)$"#
 	open-on-workspace "terminal"
 }
 window-rule {
@@ -146,7 +146,7 @@ window-rule {
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Return hotkey-overlay-title="Open a terminal: alacritty" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Open a terminal: kitty" { spawn "kitty"; }
     Mod+Shift+B hotkey-overlay-title="Open a browser: librewolf" { spawn "librewolf"; }
     Mod+Shift+T hotkey-overlay-title="Open a chat program: telegram" { spawn "Telegram"; }
     Mod+Shift+M hotkey-overlay-title="Open youtube music in browser: librewolf" { spawn-sh "librewolf --new-window music.youtube.com"; }
@@ -156,6 +156,8 @@ binds {
     Mod+T hotkey-overlay-title="Open time tracker" { spawn-sh "time_tracker ui"; }
     Mod+S hotkey-overlay-title="Open ssh menu" { spawn-sh "fuzzel_ssh.py"; }
     Mod+E hotkey-overlay-title="Evaluate Python code" { spawn-sh "fuzzel_python_eval.py"; }
+
+	Mod+U hotkey-overlay-title="Open School directory in neovim" {spawn-sh "kitty --working-directory ~/Documents/School/Uni/ -e fish -c nvim"; }
 
 	Mod+Shift+E hotkey-overlay-title="Emoji picker: bemoji" { spawn "bemoji"; }
 	Mod+Shift+N hotkey-overlay-title="Network manager: networkmanager_dmenu" { spawn "networkmanager_dmenu"; }
@@ -229,13 +231,13 @@ binds {
 		spawn-sh r#"
 			SEL=$(find ~/SourceCode -maxdepth 1 -type d | fuzzel --dmenu)
 			if [ -n "$SEL" ]; then
-				alacritty --working-directory "$SEL" -e lazygit &
+				kitty --working-directory "$SEL" -e lazygit &
 				sleep 0.5
 				niri msg action maximize-column &
-				alacritty --working-directory "$SEL" -e nvim . &
+				kitty --working-directory "$SEL" -e nvim . &
 				sleep 0.5
 				niri msg action maximize-column &
-				alacritty --working-directory "$SEL" -e gemini --resume &
+				kitty --working-directory "$SEL" -e gemini --resume &
 				sleep 0.5
 				niri msg action maximize-column &
 				niri msg action focus-column-left &

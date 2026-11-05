@@ -7,7 +7,7 @@
 		"layer": "top",
 		"modules-left": ["niri/workspaces"],
 		"modules-center": ["niri/window"],
-		"modules-right": ["battery", "clock", "niri/language", "tray"],
+		"modules-right": ["battery", "clock", "niri/language"],
 		"sway/window": {
 			"max-length": 50
 		},
@@ -22,11 +22,6 @@
 		},
 		"niri/language": {
 			"format": "󰌌 {short}"
-		},
-		"tray": {
-			"icon-size": 15,
-			"spacing": 8,
-			"show-passive-items": true
 		}
 	},
 	{
@@ -38,7 +33,7 @@
 		"height": 36,
 		"modules-left": ["custom/lectures"],
 		"modules-center": ["mpris"],
-		"modules-right": ["custom/elapsed", "pulseaudio"],
+		"modules-right": ["custom/elapsed", "pulseaudio", "tray"],
 		"mpris": {
 			"format": "{status_icon} {title} - {artist}",
 			"on-click": "playerctl play-pause",
@@ -57,7 +52,7 @@
 		"custom/elapsed": {
 			"format": "󱎫 {}",
 			"interval": 60,
-			"exec": "$HOME/.config/waybar/elapsed.sh '2026-09-15 22:00:00'",
+			"exec": "$HOME/.config/waybar/elapsed.sh '2026-10-24 22:00:00'",
 			"return-type": "json"
 		},
 		"custom/lectures": {
@@ -65,6 +60,11 @@
 			"interval": 30,
 			"exec": "$HOME/.config/waybar/lectures.py",
 			"return-type": "json"
+		},
+		"tray": {
+			"icon-size": 15,
+			"spacing": 8,
+			"show-passive-items": true
 		}
 	}
 ]

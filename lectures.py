@@ -17,26 +17,26 @@ class Lecture:
 MON, TUE, WED, THU, FRI, SAT, SUN = range(7)
 
 LECTURES = [
-    Lecture("Mathematical Methods - E", MON, time(9, 0), timedelta(minutes=90)),
-    Lecture("Linear Algebra - L", MON, time(10, 40), timedelta(minutes=90)),
-    Lecture("Mathematical Analysis - L", MON, time(14, 0), timedelta(minutes=90)),
-    Lecture("Programming for Physicists - E", MON, time(15, 40), timedelta(minutes=90)),
-    Lecture("Linear Algebra - E", MON, time(17, 20), timedelta(minutes=90)),
+    Lecture("Mathematical Methods - Excersise - N1", MON, time(9, 0), timedelta(minutes=90)),
+    Lecture("Linear Algebra - Lecture - N1", MON, time(10, 40), timedelta(minutes=90)),
+    Lecture("Mathematical Analysis - Lecture - N1", MON, time(14, 0), timedelta(minutes=90)),
+    Lecture("Programming for Physicists - Excersise - N10", MON, time(15, 40), timedelta(minutes=90)),
+    Lecture("Linear Algebra - Excersise - T8", MON, time(17, 20), timedelta(minutes=90)),
 
-    Lecture("Mechanics excersises - E", TUE, time(9, 50), timedelta(minutes=90)),
-    Lecture("Mathematical Analysis - E", TUE, time(11, 30), timedelta(minutes=135)),
-    Lecture("Mechanics and Molecular Physics - E", TUE, time(14, 50), timedelta(minutes=90)),
-    Lecture("Physics in Experiments - E", TUE, time(17, 20), timedelta(minutes=45)),
+    Lecture("Mechanics excersises - Excersise - M1", TUE, time(9, 50), timedelta(minutes=90)),
+    Lecture("Mathematical Analysis - Excersise - M2", TUE, time(11, 30), timedelta(minutes=135)),
+    Lecture("Mechanics and Molecular Physics - Excersise - M3", TUE, time(14, 50), timedelta(minutes=90)),
+    Lecture("Physics in Experiments - Excersise F1", TUE, time(17, 20), timedelta(minutes=45)),
 
-    Lecture("Mechanics and Molecular Physics - L", WED, time(9, 0), timedelta(minutes=90)),
-    Lecture("Practical Physics - E", WED, time(12, 20), timedelta(minutes=90)),
-    Lecture("Mathematical Analysis - L", WED, time(14, 0), timedelta(minutes=90)),
+    Lecture("Mechanics and Molecular Physics - Lecture - F1", WED, time(9, 0), timedelta(minutes=90)),
+    Lecture("Practical Physics - Excersise - T9", WED, time(12, 20), timedelta(minutes=90)),
+    Lecture("Mathematical Analysis - Lecture - N1", WED, time(14, 0), timedelta(minutes=90)),
 
-    Lecture("Programming for Physicists - L", THU, time(9, 0), timedelta(minutes=90)),
-    Lecture("English - E", THU, time(10, 40), timedelta(minutes=90)),
-    Lecture("Mechanics and Molecular Physics - L", THU, time(13, 10), timedelta(minutes=90)),
+    Lecture("Programming for Physicists - Lecture - T2", THU, time(9, 0), timedelta(minutes=90)),
+    Lecture("English - Excersise - V151", THU, time(10, 40), timedelta(minutes=90)),
+    Lecture("Mechanics and Molecular Physics - Lecture - F1", THU, time(13, 10), timedelta(minutes=90)),
 
-    Lecture("PE - L", FRI, time(7, 20), timedelta(minutes=225)),
+    Lecture("PE - Excersise - KTV", FRI, time(7, 20), timedelta(minutes=225)),
 ]
 
 DAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
@@ -62,6 +62,8 @@ def occurrences(lecture: Lecture, now: datetime):
 
 def tooltip() -> str:
     rows = sorted(LECTURES, key=lambda l: (l.weekday, l.start))
+    today = datetime.now().weekday()
+    rows = filter(lambda l: l.weekday == today, rows)
     return "\n".join(
         f"{DAY_NAMES[l.weekday]} {l.start:%H:%M}-"
         f"{(datetime.combine(datetime.min, l.start) + l.duration):%H:%M}  {l.name}"
